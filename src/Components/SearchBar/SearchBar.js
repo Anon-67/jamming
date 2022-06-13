@@ -1,11 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import "./SearchBar.css"
 
 function SearchBar() {
+    const [searchValue, setSearchValue] = useState("")
+
+
+
     return (
         <div className="SearchBar">
-            <input placeholder="Enter A Song, Album, or Artist" />
-            <button class="SearchButton">SEARCH</button>
+            <form onSubmit={(e) => {
+                e.preventDefault()
+                console.log(searchValue)
+            }}>
+                <input placeholder="Enter A Song, Album, or Artist" value={searchValue} onChange={(e) => setSearchValue(e.target.value)} />
+                <button className="SearchButton" type="submit">SEARCH</button>
+            </form>
         </div>
     )
 }
