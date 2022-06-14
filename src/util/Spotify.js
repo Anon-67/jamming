@@ -1,6 +1,5 @@
-const clientId = "a6f1d237b8bf4bd0ac46f65a365faddc"
+const clientId = ""
 const redirectUrl = "http://localhost:3000"
-
 let accessToken;
 
 
@@ -29,33 +28,33 @@ const Spotify = {
   },
 
 
-  connect() {
-    const accessToken = Spotify.getAccessToken();
-    const headers = {
-      Authorization: `Bearer ${accessToken}`
-    };
-    return fetch(`https://api.spotify.com/v1/me`, { headers: headers })
-      .then(response => {
-        if (response.ok) {
-          return response.json();
-        }
-        throw new Error('Request failed!');
-      }, networkError => {
-        console.log(networkError.message);
-      })
-      .then(jsonResponse => {
-        if (!jsonResponse.id) {
-          return '';
-        }
-        return jsonResponse;
-      });
-  },
+  // connect() {
+  //   const accessToken = Spotify.getAccessToken();
+  //   const headers = {
+  //     Authorization: `Bearer ${accessToken}`
+  //   };
+  //   return fetch(`https://api.spotify.com/v1/me`, { headers: headers })
+  //     .then(response => {
+  //       if (response.ok) {
+  //         return response.json();
+  //       }
+  //       throw new Error('Request failed!');
+  //     }, networkError => {
+  //       console.log(networkError.message);
+  //     })
+  //     .then(jsonResponse => {
+  //       if (!jsonResponse.id) {
+  //         return '';
+  //       }
+  //       return jsonResponse;
+  //     });
+  // },
 
-  disconnect() {
-    if (accessToken) {
-      window.setTimeout(() => accessToken = '', 0);
-    }
-  },
+  // disconnect() {
+  //   if (accessToken) {
+  //     window.setTimeout(() => accessToken = '', 0);
+  //   }
+  // },
 
   search(searchTerm) {
     const accessToken = Spotify.getAccessToken();
