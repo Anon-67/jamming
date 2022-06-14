@@ -1,5 +1,4 @@
 import React from "react";
-import { useSelector } from "react-redux";
 import TrackList from "../TrackList/TrackList";
 import "./SearchResults.css"
 

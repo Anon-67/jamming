@@ -16,10 +16,16 @@ function Playlist() {
         dispatch(updatePlaylistName(name))
     }
 
+    function handleSubmit(e){
+        e.preventDefault()
+        alert("submitted")
+
+    }
+
 
     return (
         <div class="Playlist">
-            <form>
+            <form className="track-form" onSubmit={(e) => handleSubmit(e)}>
                 <input placeholder="Name your playlist..." value={playlistName} onChange={(e) => handleOnChange(e.target.value)} />
                 {playlistMap}
                 <button type="submit" class="Playlist-save">SAVE TO SPOTIFY</button>
