@@ -4,9 +4,7 @@ import Track from "../Track/Track";
 import "./TrackList.css"
 
 function TrackList() {
-    const searchResults = useSelector(state => state.searchResults.searchResults)
-    console.log(searchResults)
-
+    const searchResults = useSelector(state => state.searchResults.results)
 
     const trackMap = searchResults.map((track) => <Track key={track.id} track={track} />)
 
