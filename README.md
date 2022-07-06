@@ -1,6 +1,6 @@
 # Getting Started with Create React App
 
-This project was bootstrapped with Create React App and built as part of the Codecademy Pro "Build Front-End Web Applications from Scratch" course but refactored to remove class components and using Redux for a global state store.
+This project was bootstrapped with Create React App and built as part of the Codecademy Pro "Build Front-End Web Applications from Scratch" course but refactored to remove class components and using Redux for a global state store.   
 
 
 # Features
